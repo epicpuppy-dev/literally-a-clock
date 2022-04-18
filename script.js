@@ -47,6 +47,14 @@ calculator.setMathBounds({
     top: 1.2
   });
 
+for (var l = 1; l<=12; l++) {
+    calculator.setExpression({
+        id: 'num' + l, hidden: true, 
+        latex: '\\left(0.82\\sin\\left(' + (30 * l) + '\\right),0.82\\cos\\left(' + (30 * l) + '\\right)\\right)', 
+        color: 'black', label: l, showLabel: true, labelSize: Desmos.LabelSizes.LARGE
+    })
+}
+
 setInterval(function () {
     const time = new Date();
     document.title = time.toLocaleTimeString() + " - Clock";
